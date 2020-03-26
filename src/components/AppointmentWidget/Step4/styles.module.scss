@@ -1,0 +1,50 @@
+:local {
+  .container__picker__success {
+    padding: 1.7em;
+    text-align: center;
+  }
+
+  .container__picker__success__message {
+    font-size: 1em;
+    font-weight: 300;
+    margin: 1em 0;
+  }
+
+  .container__picker__success__icon {
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+
+    svg {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+
+    .checkmark {
+      stroke: green;
+      stroke-dashoffset: 745.74853515625;
+      stroke-dasharray: 745.74853515625;
+    }
+
+    .iconIsActive {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 0;
+      animation-name: dash;
+      animation-duration: 2s;
+      animation-timing-function: ease-out;
+      animation-delay: .5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 745.74853515625;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+:local {
+  .message {
+      color: #97A4AA;
+      text-align: center;
+      padding: 0em 30/16+em;
+      img {
+        max-width: 50%;
+        margin-bottom: 1.5em;
+      }
+  }
+
+  .messageTitle {
+      font-size: 24/16+em;
+      line-height: 1.3;
+  }
+
+  .messageParagraph {
+      margin: 20/15+em 0;
+      font-size: 15/16+em;
+      line-height: 1.5;
+  }
+
+  .messageSignature, .messageFooter strong{
+      margin-bottom: 14/16+em;
+  }
+}

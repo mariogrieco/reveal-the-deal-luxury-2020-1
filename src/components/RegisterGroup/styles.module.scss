@@ -1,0 +1,71 @@
+@import "src/themes/__variables.scss";
+
+:local {
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #5E646F;
+		border-top: 5px solid #424955;
+		background-image: radial-gradient(#656161, #606267, #3d4045);
+		padding: 10px 0;
+
+        @media all and (max-width:$breakpoint-mobile) {
+			display: none;
+		}
+
+		> div {
+			display: flex;
+			text-align: center;
+			height: 160px;
+			position: relative;
+			padding: 1em 1.75em;
+			flex: 1;
+			justify-content: space-around;
+    		align-items: center;
+			flex-direction: column;
+
+			h3 {
+				font-size: .76em;
+				font-weight: normal;
+				color: white;
+				max-width: 200px;
+				margin-left: auto;
+				margin-right: auto;
+				line-height: 1.62;
+				margin-bottom: 0;
+				margin-top: 0;
+				letter-spacing: -0.20px;
+			}
+
+			span {
+				font-size: 3.5em;
+				font-weight: 900;
+				color: white;
+				font-family: 'Oxygen', sans-serif;
+				letter-spacing: -0.22px;
+			}
+
+			&:nth-child(2) {
+				&:after {
+					content: "";
+					width: 1px;
+					position: absolute;
+					left: 0;
+   			 		top: 1.2em;
+    				bottom: 1.2em;
+					background: #D0D0D0;
+				}
+				&:before {
+					content: " ";
+					width: 1px;
+					position: absolute;
+					right: 0;
+   			 		top: 1.2em;
+    				bottom: 1.2em;
+					background: #D0D0D0;
+				}
+			}
+		}
+	}
+}

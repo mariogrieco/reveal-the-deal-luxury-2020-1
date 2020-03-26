@@ -1,0 +1,80 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .bgWrapper {
+    position: relative;
+    min-height: 160px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      min-height: 330px;
+    }
+  }
+
+  .container {
+    @media all and (max-width: $breakpoint-mobile) {
+      margin-top: 20/16+em;
+    }
+  }
+
+  .voucher {
+    position: relative;
+    max-width: 706px;
+    margin: 0 auto 0;
+    padding: 0 15px 5em 15px;
+    font-family: 'Oxygen', 'sans-serif';
+  }
+
+  .cars {
+    text-align: center;
+    position: relative;
+    margin: -24/16+em auto 20/16+em;
+
+    div {
+      width: 705/16+em;
+      @include dynamicTextSize(1040px);
+      @include dynamicTextSize(640px, 22px);
+      width: 100%;
+      margin: 0 auto;
+      background-position: bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 150px;
+      background-image: var(--cars);
+      @media all and (max-width: $breakpoint-mobile) {
+        background-image: var(--cars-mobile);
+      }
+    }
+  }
+
+  .logoContainer {
+    text-align: center;
+    top: -15px;
+    position: relative;
+    @media all and (max-width: $breakpoint-mobile) {
+      top: -35px;
+    }
+  }
+
+  .brandLogo {
+    margin-bottom: 10/16+em;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  .mask {
+    pointer-events: none;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: center bottom no-repeat;
+    background-size: 100%;
+  }
+}

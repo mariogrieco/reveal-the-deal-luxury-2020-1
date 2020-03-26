@@ -1,0 +1,85 @@
+@import "src/themes/__variables.scss";
+
+:local {
+	.container {
+		display: grid;
+		grid-template-columns: calc(100% - 500px) minmax(500px, 35%);
+		grid-template-rows: 215px minmax(215px, 100%);
+		overflow: hidden;
+		@media all and (max-width: $breakpoint-tablet) {
+			grid-template-rows: 250px minmax(250px, 100%);
+			grid-template-columns: 60% 40%;
+		}
+	}
+
+	.header {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		background-size: 95%;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-top: var(--top-bar-height);
+		height: 215px;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			height: 250px;
+			background-size: 150%;
+		}
+
+		@media all and (max-width: $breakpoint-mobile) {
+			background-size: cover;
+		}
+	}
+
+	.children {
+		margin-top: auto;
+		margin-bottom: auto;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		> div {
+			max-width: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	.sidebar {
+		margin-left: auto;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		> div {
+			width: 100%;
+			max-width: 100%;
+			margin: 0;
+			height: 100%;
+			min-height: 800px;
+			height: 100vh;
+			background-size: 100%;
+			background-position: center;
+			background-position-y: 100%;
+			@media all and (max-width: $breakpoint-mobile) {
+				min-height: 1024px;
+			}
+		}
+	}
+
+	@media all and (max-width: $breakpoint-mobile) {
+		.container {
+			display: block;
+			width: 100%;
+		}
+
+		.header {
+			width: 100%;
+		}
+
+		.children {
+			width: 100%;
+		}
+
+		.sidebar {
+			width: 100%;
+			margin-right: auto;
+		}
+	}
+}

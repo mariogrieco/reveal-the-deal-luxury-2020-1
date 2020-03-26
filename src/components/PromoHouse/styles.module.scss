@@ -1,0 +1,19 @@
+@import "src/themes/__variables.scss";
+
+@page {
+  size: Letter portrait;
+}
+
+:local {
+  .container {
+    height: 11in;
+    padding: .5in;
+    width: 8.5in;
+  }
+
+  .voucher {
+    padding: .1in;
+    font-family: 'Oxygen-regular', 'Oxygen';
+    letter-spacing: -0.25px;
+  }
+}

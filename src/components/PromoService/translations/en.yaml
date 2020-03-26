@@ -1,0 +1,12 @@
+bubble:
+  title: HURRY!
+  description: This Exclusive Offering Ends {expiryDate}
+
+title: "<1>ON NOW!</1> FOR SELECT CLIENTS"
+
+visit: "To validate, visit"
+promo_code: "and use promo code"
+
+description: "As our valued client we would like to extend to you an invitation to Trade-In your current vehicle until {expiry} by using this {voucherName} worth up to {voucherValue}. This Voucher can be used to increase the equity in your vehicle by up to a full {voucherValue} for the next very short time. If you can’t use this Voucher at this time, you could earn $100 in Service Credits just by sharing it with a friend or family member who is in the market currently. Ask a sales consultant for details. Thank you for your continued patronage!"
+
+disclaimer: "Redeemable only at exclusive dealer – One per customer – No cash value – Voucher must be presented on arrival to be considered valid Cannot be combined with any other offer – Any trade-ins must be formally appraised by a sales manager of the participating dealer This offer can end without notice. By submitting this information you consent to us communicating with you digitally. All Rights Reserved."

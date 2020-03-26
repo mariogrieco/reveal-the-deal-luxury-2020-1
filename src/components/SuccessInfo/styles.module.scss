@@ -1,0 +1,98 @@
+@import "themes/__variables.scss";
+
+:local {
+  .container {
+    margin-bottom: 60/16+em;
+  }
+
+  .inner {
+    max-width: 1166px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 40/16+em;
+
+    @media all and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      padding: 0 20/16+em;
+    }
+  }
+
+  .congratsContainer {
+    border: 1px solid #E9E9E9;
+    border-radius: 7/16+em;
+    width: 50%;
+    padding: 45/16+em;
+    text-align: center;
+
+    @media all and (max-width: $breakpoint-tablet) {
+      width: auto;
+      margin: 0 20/16+em;
+    }
+  }
+
+  .congratsTitle {
+    margin-top: 0;
+    font-size: 23/16+em;
+  }
+
+  .congratsValue {
+    font-size: 120/16+em;
+    font-weight: bold;
+  }
+
+  .congratsSubtitle {
+    font-size: 18/16+em;
+    margin-bottom: 0;
+  }
+
+  @media all and (max-width: $breakpoint-mobile) {
+    .congratsTitle {
+      font-size: 16/16+em;
+    }
+
+    .congratsValue {
+      font-size: 72/16+em;
+    }
+
+    .congratsSubtitle {
+      font-size: 14/16+em;
+    }
+  }
+
+  .finalDetails {
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+
+    p {
+      margin: 0;
+      padding: 1em 40/16+em;
+    }
+
+    @media all and (max-width: $breakpoint-main-container) {
+      width: 50%;
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        width: 100%; // IE11 fix
+      }
+    }
+
+    @media all and (max-width: $breakpoint-tablet) {
+      width: auto;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      p {
+        padding: 0;
+      }
+    }
+  }
+}

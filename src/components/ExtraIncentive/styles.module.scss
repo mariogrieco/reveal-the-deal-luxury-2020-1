@@ -1,0 +1,39 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .bgWrapper {
+    position: relative;
+    min-height: 150px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.4375em;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      border-radius: 0;
+      margin-top: 2em;
+      min-height: 300px;
+    }
+  }
+
+  .car {
+    background-image: var(--background-car-image);
+    height: 325px;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .title {
+    margin: 0 auto;
+    font-size: 25/16+em;
+    padding: 0 30/16+em;
+    color: #fff;
+    text-align: center;
+    margin-top: 1.2em;
+  }
+}

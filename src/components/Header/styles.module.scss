@@ -1,0 +1,113 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .bgWrapper {
+    position: relative;
+    height: 190px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px;
+    margin-bottom: 30px;
+    max-width: 95%;
+    margin-left: auto;
+    padding-top: 0;
+    @media all and (max-width: $breakpoint-mobile) {
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      max-height: 100%;
+    }
+  }
+
+  .messageText {
+    float: right;
+    color: #fff;
+    font-weight: 600;
+    @media all and (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  .container {
+    @media all and (max-width: $breakpoint-mobile) {
+      margin-top: 0;
+      max-height: 160px;
+      min-height: 160px;
+    }
+  }
+
+  .logoContainer {
+    flex-basis: 230px;
+    svg {
+      width: 183px;
+      height: auto;
+    }
+
+    @media all and (max-width: $breakpoint-tablet) {
+      > div {
+        top: -2em;
+      }
+
+      svg {
+        width: 245px;
+        height: auto;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      flex-basis: 40vw;
+
+      > div {
+        top: -2.62em;
+      }
+
+      svg {
+        width: 38vw;
+        height: auto;
+      }
+    }
+  }
+
+  .cars {
+    text-align: center;
+    position: relative;
+    flex-basis: 45%;
+    min-width: 520px;
+    flex: 1;
+    div {
+      @include dynamicTextSize(1040px);
+      @include dynamicTextSize(640px, 22px);
+      width: 100%;
+      margin: 0 auto;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 190px;
+      background-image: var(--cars);
+      @media all and (max-width: $breakpoint-tablet) {
+        background-image: var(--cars-mobile);
+        background-position: center;
+      }
+      @media all and (max-width: $breakpoint-mobile) {
+        height: 160px;
+      }
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      flex-basis: 100%;
+      min-width: 100%;
+      margin-top: -10.80em;
+    }
+  }
+
+  .logoContainer,
+  .cars{
+    position: relative;
+    top: 40px;
+  }
+}

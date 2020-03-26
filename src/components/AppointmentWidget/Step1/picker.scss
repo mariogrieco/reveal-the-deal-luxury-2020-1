@@ -1,0 +1,46 @@
+.theme-container {
+  border: none;
+  padding: .5em 1em;
+
+  .pika-lendar {
+    margin: 0;
+    width: 100%;
+
+    @media (max-width: 470px) {
+      zoom: .9;
+    }
+
+    @media (max-width: 430px) {
+      zoom: .8;
+    }
+
+    @media (max-width: 340px) {
+      zoom: .7;
+    }
+  }
+
+  .pika-table {
+    th {
+      font-size: 0.625em;
+      line-height: 1;
+      font-weight: 300;
+    }
+
+    .pika-button {
+      background: transparent;
+      transition: all .25s ease-out;
+      padding: 0.375em .5em;
+
+      &:hover {
+        background: var(--secondaryColor);
+        color: #fff;
+      }
+
+    }
+
+    .is-selected .pika-button {
+      box-shadow: 0 0 0 1px var(--secondaryColor);
+      color: var(--secondaryColor);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "campaign": {
+    "client": {
+      "name": "Home Town"
+    },
+    "videos": {
+      "sidebar": "https://s3.amazonaws.com/com.shift.videos.test.upgrade-sale-2019-1/23105da0-58fd-4f71-ac07-830404d91677.mp4"
+    }
+  },
+  "lead": {
+    "fields": {
+      "firstName": "Mickey",
+      "lastName": "Mouse"
+    }
+  }
+}

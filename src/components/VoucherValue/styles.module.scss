@@ -1,0 +1,43 @@
+@import "src/themes/_variables.scss";
+
+:local {
+    .container {
+        height: 146px;
+        border-radius: 4px;
+        margin: 10/16+em 15px;
+        padding: 20/16+em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #E5E8EA;
+
+        @media all and (max-width: $breakpoint-main-container) {
+            height: auto;
+            max-width: none;
+            min-height: 0;
+        }
+    }
+
+    .title {
+        width: 100%; // IE11 fix
+        font-size: 14px;
+        line-height: 1.42;
+        margin-bottom: 0;
+        margin-top: 0;
+        letter-spacing: -0.22px;
+        max-width: 200px;
+    }
+
+    .value {
+        display: block;
+        font-weight: bold;
+        font-size: 60/16+em;
+        font-family: 'Oxygen', sans-serif;
+        font-weight: normal;
+        @media all and (max-width: $breakpoint-tablet) {
+            font-size: 48/16+em;
+        }
+    }
+}

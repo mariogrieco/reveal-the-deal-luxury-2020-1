@@ -1,0 +1,19 @@
+description: "Please confirm your contact information."
+
+section:
+    contactInformation: "Contact Information"
+    currentVehicleInfo: "Current Vehicle Information"
+    currentVehicleCondition: "Current Vehicle Condition"
+    newVehiclePreference: "New Vehicle Preference"
+
+label:
+    firstName: "First Name"
+    lastName: "Last Name"
+    emailAddress: "Email Address"
+    daytimePhone: "Daytime Phone Number"
+    eveningPhone: "Evening Phone Number"
+    vehicleYear: "Vehicle Year"
+    vehicleMake: "Vehicle Make"
+    vehicleModel: "Vehicle Model"
+    continueToStep2: "Continue"
+

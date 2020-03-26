@@ -1,0 +1,16 @@
+redeemable: "This voucher is redeemable only at {dealershipName} Valid Until:"
+cash_back: "Cash Incentives up to"
+rates: "Rates as low as"
+
+voucher:
+  prefix: "{name}, you are pre-approved for a"
+  suffix: "To use toward a {vehicle}."
+  name: "{name}"
+
+combine:
+  1: "Combine these Manufacturer Incentives"
+  2: "for even greater savings."
+
+terms:
+  1: "Redeemable only at exclusive dealer – One per customer – No cash value – Voucher must be presented on arrival to be considered valid Cannot be combined with any other offer – Any trade-ins must be formally"
+  2: "appraised by a sales manager of the participating dealer This offer can end without notice. By submitting this information you consent to us communicating with you digitally. All Rights Reserved."

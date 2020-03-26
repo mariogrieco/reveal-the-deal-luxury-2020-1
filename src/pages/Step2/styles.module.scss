@@ -1,0 +1,68 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 0 auto;
+    padding: 0 0 2.5em;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  .brandsContainer {
+    display: none;
+    @media all and (max-width: $breakpoint-mobile) {
+      display: block;
+    }
+  }
+
+  .steps {
+    width: auto !important;
+    margin: 0 40/16+em 50/16+em;
+  }
+
+  .sidebarContainer {
+    margin-left: 60/16+em;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0 40/16+em;
+
+
+    @media all and (max-width: $breakpoint-mobile) {
+      overflow: hidden;
+      display: none;
+    }
+  }
+
+  .formContainer {
+    background: #FFFFFF;
+    flex-grow: 1;
+    max-width: 80%;
+    margin: 0 auto;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      margin: 0 2.5em 1.6em 2.5em;
+      width: calc(100% - 80px);
+      button {
+        max-width: 224px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .videoThumbnail {
+    margin: 0 -40/16+em;
+    height: 316px;
+
+    @media all and (max-width: $breakpoint-mobile) {
+      overflow: hidden;
+    }
+  }
+}

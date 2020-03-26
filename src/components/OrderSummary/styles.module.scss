@@ -1,0 +1,142 @@
+@import "src/themes/_variables.scss";
+
+:local {
+	.container {
+		min-height: 500px;
+		background-size: 100%;
+		background-position: bottom;
+		padding: 35px;
+		display: flex;
+		flex-direction: column;
+		font-family: Oxygen, sans-serif;
+		background-color: #F2F2F2;
+		@media all and (max-width: $breakpoint-mobile) {
+			min-width: 100%;
+			width: 100vw;
+		}
+	}
+
+	.confirmBtn {
+		display: none;
+		position: absolute;
+		right: 6em;
+		> div {
+			background-color: white;
+			height: 44px;
+			line-height: 44px;
+			width: 190px;
+			border-radius: 4px;
+			color: #223970;
+		}
+		@media all and (max-width: $breakpoint-tablet) {
+			display: block;
+		}
+
+		@media all and (max-width: $breakpoint-mobile) {
+			display: none;
+		}
+	}
+
+	.iconContainer {
+		margin-left: auto;
+		position: relative;
+		cursor: pointer;
+		> svg {
+			transition: all .2s linear;
+			&:hover,
+			&:active,
+			&:focus {
+				transform: rotate(1.82deg) scale(0.9);
+			}
+		}
+	}
+
+	.footer {
+		margin-top: auto;
+	}
+
+	.confirm {
+		height: 50px;
+		border-radius: 8px;
+		background-color: #233971;
+		color: #FFFFFF;
+		line-height: 50px;
+		text-align: center;
+		font-family: 'Oxygen', sans-serif;
+		font-weight: 600;
+		display: block;
+		cursor: pointer;
+	}
+
+	.bubble {
+		position: absolute;
+		left: -2.42em;
+		top: 8px;
+		font-size: .79em;
+		width: 26px;
+		height: 26px;
+		background-color: transparent;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #DA2348;
+		font-weight: bold;
+		border: 2px solid #DA2348;
+	}
+
+	.heading {
+		height: 70px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		border-radius: 8px;
+		font-family: 'Oxygen', sans-serif;
+		padding: 0 25px;
+		.textArea, .textAreaMenu {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #FFFFFF;
+			span {
+				font-size: 1.4em;
+				border-left: 1px solid white;
+				padding: 0 12px;
+				display: inline-block;
+			}
+			strong {
+				padding: 0 12px;
+				font-size: 2em;
+				display: inline-block;
+			}
+		}
+	}
+
+
+	.textAreaMenu {
+		font-size: 1.42em;
+	}
+
+	.headingMenu {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-start;
+		> svg {
+			position: absolute;
+			right: 1.25em;
+			cursor: pointer;
+			top: 1.25em;
+			transition: all .2s linear;
+			&:hover,
+			&:active,
+			&:focus {
+				transform: rotate(1.82deg) scale(0.9);
+			}
+		}
+
+		> h3 {
+			font-size: 1.92em;
+		}
+	}
+}

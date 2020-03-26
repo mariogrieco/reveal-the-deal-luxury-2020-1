@@ -1,0 +1,48 @@
+@import "src/themes/_variables.scss";
+
+:local {
+	.container {
+		background-color: #FFFFFF;
+		box-shadow: 0px 1px 3px #f8f7f7;
+		border-radius: 8px;
+		height: 70px;
+		margin: 15px 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.leftIcon {
+		position: relative;
+		width: 104px;
+		height: 100%;
+		&::after {
+			content: "";
+			width: 1px;
+			position: absolute;
+			left: 104px;
+			top: 0;
+			bottom: 0;
+			background: #E5E8EA;
+		}
+	}
+
+	.formFieldContainer {
+		width: 50%;
+		margin: 0 auto;
+		div {}
+	}
+
+	.price {
+		font-size: 24px;
+		font-weight: normal;
+	}
+
+	.rightSide {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 15px;
+		width: calc(100% - 104px);
+	}
+}

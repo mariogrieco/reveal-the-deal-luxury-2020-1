@@ -1,0 +1,115 @@
+@import "src/themes/__variables.scss";
+
+:local {
+	.container{
+		background-image: var(--hero-mask);
+		position: relative;
+		background-position: left bottom;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		margin: 0;
+		padding: 0;
+		min-height: 100%;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			min-height: 380px;
+			margin-bottom: 7.22em;
+			background-image: var(--hero-mask-tablet);
+		}
+
+		@media all and (max-width: $breakpoint-mobile) {
+			min-height: 200px;
+			margin-bottom: 5.2em;
+			height: 40vw;
+		}
+	}
+
+	.watchButtonContainer {
+		position: absolute;
+		left: 50%;
+		bottom: 15%;
+		transform: translateX(-50%);
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media all and (max-width: $breakpoint-tablet) {
+			left: 50%;
+			bottom: 50%;
+			transform: translate(-50%, 50%);
+			width: 100%;
+		}
+	}
+	.slide {
+		background-size: 100%;
+		background-image: var(--background-image);
+		margin: 0 auto;
+		background-repeat: no-repeat;
+		position: absolute;
+		bottom: 0;
+		top: 2em;
+		right: 0;
+		left: 1em;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			background-size: contain;
+			background-image: var(--background-image-tablet);
+			position: absolute;
+			bottom: 0;
+			top: 0em;
+			right: 0em;
+			left: 0em;
+			background-position: center bottom;
+			max-width: 50%;
+			margin: 2.3333vw auto;
+		}
+	}
+
+	.luxuryBackground {
+		min-height: 500px;
+		background-position: top;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			min-height: 450px;
+			background-position: center;
+			margin-bottom: 0;
+			background-size: cover;
+			background-position-y: -10em;
+		}
+
+
+		@media all and (max-width: $breakpoint-mobile) {
+			height: 55vw;
+			min-height: 345px;
+			background-position: center;
+			margin-bottom: 0;
+			background-size: cover;
+			background-position-y: -5em;
+		}
+
+		.slide {
+			background-position: center;
+			margin: 0 15px;
+			top: 30%;
+			@media all and (max-width: $breakpoint-tablet) {
+				background-position: center;
+				margin: 0;
+				top: 30%;
+				width: 100%;
+				padding: 0 30px;
+				max-width: 100%;
+				background-size: 90%;
+				max-width: 720px;
+				margin: 0px auto;
+				background-position: bottom;
+				max-width: 625px;
+			}
+		}
+
+		.mainLogo {
+			position: relative;
+			top: 2em;
+		}
+	}
+}

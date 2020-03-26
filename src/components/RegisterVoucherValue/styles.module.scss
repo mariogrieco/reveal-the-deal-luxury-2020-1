@@ -1,0 +1,47 @@
+@import "src/themes/_variables.scss";
+
+:local {
+    .container {
+        width: 50%;
+        height: 135px;
+        border-radius: 4px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media all and (max-width: $breakpoint-mobile) {
+            padding: 1em .75em;
+        }
+
+        @media all and (max-width: $breakpoint-main-container) {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    .inner {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        @media all and (max-width: $breakpoint-mobile) {
+            width: 100%;
+        }
+    }
+
+    .title {
+        width: 100%; // IE11 bugfix
+    }
+
+    .value {
+        display: block;
+        font-size: 70/16+em;
+        font-weight: 800;
+        font-family: 'Oxygen', sans-serif;
+    }
+}

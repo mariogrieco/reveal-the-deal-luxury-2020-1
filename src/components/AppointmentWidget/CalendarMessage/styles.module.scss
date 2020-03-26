@@ -1,0 +1,89 @@
+:local {
+  .container__picker {
+    box-shadow: 0 .5em 1.5em fade-out(#000, 0.9), 0 .25em 1em fade-out(#000, 0.95);
+    overflow: hidden;
+    margin: 1em 1.5em 4em;
+    padding-bottom: 0.75em;
+    position: relative;
+    height: 55%;
+
+    @media (max-width: 470px) {
+      font-size: 16 / 470 * 100vw;
+    }
+  }
+
+  .container__picker__panel {
+    background: #fff;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all .25s ease-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    &.isActive {
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+
+  .container__picker__panel__header {
+    background: var(--secondaryColor);
+    color: #fff;
+    height: 2em;
+    padding: .5em .75em;
+    position: relative;
+  }
+
+  .container__picker__panel__title {
+    font-weight: 300;
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .container__picker__panel__back {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    svg {
+      display: block;
+      height: auto;
+      width: 2em;
+    }
+  }
+
+  .container__picker__button {
+    background: transparent;
+    border: 1px solid var(--secondaryColor);
+    border-radius: 2em;
+    cursor: pointer;
+    color: var(--secondaryColor);
+    display: inline-block;
+    font-size: 1em;
+    padding: .5em 1em;
+    margin: 0 0.5em;
+    transition: all .25s ease-out;
+
+    &:hover {
+      border-color: var(--secondaryColor);
+      color: var(--secondaryColor);
+    }
+  }
+
+  .container__picker__button--primary {
+    background: var(--secondaryColor);
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--secondaryColor);
+      color: #fff;
+    }
+  }
+}

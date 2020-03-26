@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "react-app",
+    "standard",
+    "plugin:flowtype/recommended"
+  ],
+  "rules": {
+    "indent": [ "error", 4, {
+      "SwitchCase": 1,
+      "ignoredNodes": [
+        "JSXElement",
+        "JSXElement > *",
+        "JSXAttribute",
+        "JSXIdentifier",
+        "JSXNamespacedName",
+        "JSXMemberExpression",
+        "JSXSpreadAttribute",
+        "JSXExpressionContainer",
+        "JSXOpeningElement",
+        "JSXClosingElement",
+        "JSXText",
+        "JSXEmptyExpression",
+        "JSXSpreadChild"
+      ]
+    }],
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ],
+    "import/no-webpack-loader-syntax": "off"
+  },
+  "plugins": [
+    "react",
+    "flowtype"
+  ],
+  "globals": {
+    "REACT_APP_SHIFT_API_BASE_URL": true
+  }
+}

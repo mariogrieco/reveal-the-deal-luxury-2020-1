@@ -1,0 +1,108 @@
+@import "src/themes/_variables.scss";
+
+:local {
+    .container {
+        width: 100%;
+        height: 135px;
+        border-radius: 4px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > div {
+            > span {
+                margin: .05em 0;
+            }
+
+            &:nth-child(1) {
+                &:after {
+                    content: " ";
+                    width: 1px;
+                    background-color: #E5E8EA;
+                    position: absolute;
+                    left: 50%;
+                    top: 15%;
+                    bottom: 15%;
+                }
+            }
+        }
+
+        @media all and (max-width: $breakpoint-main-container) {
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            min-height: 300px;
+            padding: 0;
+            > div {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                > span {
+                    margin: .05em 0;
+                }
+
+                &:nth-child(1) {
+                    &:after {
+                        content: " ";
+                        width: 100%;
+                        height: 1px;
+                        background-color: #E5E8EA;
+                        position: absolute;
+                        top: 50%;
+                        bottom: unset;
+                        left: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .cashBack,
+    .rates {
+        margin: 0;
+        width: 50%;
+        padding: .7em 0;
+    }
+
+    .cashBackValue,
+    .ratesValue {
+        display: block;
+        font-size: 3em;
+        font-family: 'Oxygen', sans-serif;
+        font-weight: normal;
+
+        @media all and (max-width: $breakpoint-tablet) {
+            font-size: 36/16+em;
+        }
+    }
+
+    .smallValues {
+        font-size: 40/16+em;
+    }
+
+
+    .ratesTitle,
+    .cashBackTitle {
+        font-size: 14px;
+        line-height: 1.42;
+        margin-bottom: 0;
+        margin-top: 0;
+        letter-spacing: -0.22px;
+    }
+
+    .rates {
+        margin: .25em 0 0 0;
+        @media all and (max-width: $breakpoint-mobile) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}

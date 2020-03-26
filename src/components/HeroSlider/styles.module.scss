@@ -1,0 +1,51 @@
+@import "src/themes/__variables.scss";
+
+:local {
+	.container{
+		min-height: 420px;
+
+		background-image: var(--hero-mask);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 4em;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			min-height: 380px;
+			margin-bottom: 7.22em;
+		}
+
+		@media all and (max-width: $breakpoint-mobile) {
+			min-height: 200px;
+			margin-bottom: 5.2em;
+			height: 40vw;
+		}
+	}
+
+	.slide {
+		height: 300px;
+		width: 100% !important;
+		background-size: 75%;
+		margin: 0 auto;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		@media all and (max-width: $breakpoint-tablet) {
+			background-size: 72.5%;
+		}
+
+		@media all and (max-width: $breakpoint-mobile) {
+			background-size: 90%;
+			min-height: 200px;
+			max-height: 200px;
+		}
+	}
+
+	.swiperCustomContainer {
+		top: calc(75% - 115px);
+		position: relative;
+		@media all and (max-width: $breakpoint-mobile) {
+			top: calc(75% - 75px);
+		}
+	}
+}

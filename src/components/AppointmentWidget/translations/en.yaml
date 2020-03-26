@@ -1,0 +1,20 @@
+bookButton: "Book your Appointment Now"
+typing: "{name} is typing..."
+conversation:
+    greet: "{salutation} {name}, congrats on securing your event savings!"
+    one: "I have some good news..."
+    two: "today we are offering a ${value} {incentive} for anyone who simply selects the Day and Time they'll come in to see us. We’ll just add it to your current incentive which you will receive when you take delivery of your new vehicle."
+    three: "I need to run now (many clients online!). If you have any questions, just type them in the box below and someone will get back to you shortly :) ... Thanks again for being a client of {client}!"
+salutations:
+    generic: 'Good day'
+    morning: 'Good morning'
+    afternoon: 'Good afternoon'
+    evening: 'Good evening'
+appointment:
+    date: 'Select a date'
+    time: 'Select a time'
+    confirmation: 'Just to confirm…<br>You will be coming in to<br>{dealershipName}<br>{time}.<br>Would you like to keep this time?'
+    reject: Change
+    confirm: Keep
+    success: 'Someone will soon get in touch with you to confirm your appointment. Thank you.'
+    addToCalendar: 'Add to calendar'

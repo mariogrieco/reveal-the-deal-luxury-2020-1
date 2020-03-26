@@ -1,0 +1,42 @@
+@import "src/themes/__variables.scss";
+
+:local {
+    .container {
+        background-color:#F8F8F8;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Oxygen', sans-serif;
+    }
+
+    .containerBox {
+        border-radius: 4px;
+        background-color:#FFFFFF;
+        width: 709px;
+        height: 452px;
+        box-shadow: 0.0995em 0.0995em 0.1995em #EEEEEE;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+        @media all and (max-width: $breakpoint-tablet) {
+            box-shadow: 0 0 0 #EEEEEE;
+            background-color:#F8F8F8;
+        }
+    }
+
+    .boxIcon {
+        border-radius: 50%;
+        height: 10em;
+        width: 10em;
+        background-color:#F8F8F8;
+        margin: 0em auto 4em auto;
+    }
+    .boxMessage {
+        color: #7F7F7F;
+        font-size: 1.92em;
+        font-weight: lighter;
+    }
+}

@@ -1,0 +1,68 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Build and deploy
+
+env:
+  S3_BUCKET: s3://reveal-the-deal-2020-1.shiftone.io
+  EVENT_NAME: Reveal the Deal
+
+jobs:
+  filter-master-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@shift-marketing'
+
+      #based on https://github.com/actions/cache/blob/master/examples.md
+      - uses: actions/cache@v1
+        id: npm-cache
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: npm install
+        if: steps.npm-cache.output.cache-hit != 'true'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_TOKEN }}
+        run: npm install
+
+      - name: build
+        env:
+          REACT_APP_WEBSITE_TITLE: ${{ env.EVENT_NAME }}
+          REACT_APP_SHIFT_API_BASE_URL: https://app.shiftone.io/api/
+          REACT_APP_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        run: npm run build
+
+      - uses: chrislennon/action-aws-cli@v1.1
+
+      - name: S3 sync
+        run: aws s3 sync build ${{ env.S3_BUCKET }} --delete
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: CloudFront invalidate distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUD_FRONT_DISTRIBUTION_ID }} --paths /index.html
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - uses: 8398a7/action-slack@v2
+        with:
+          status: ${{ job.status }}
+          author_name: Deploy Bot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # required
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+        if: always() # Pick up events even if the job fails or is canceled.

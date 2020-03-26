@@ -1,0 +1,77 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  h3 {
+    font-size: 2.32em;
+    margin: 0 0 0.5em 0;
+    line-height: 1.18;
+    letter-spacing: -1px;
+  }
+
+
+  .mainContainer {
+    padding: 0px 30px;
+    @media all and (max-width: $breakpoint-tablet) {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+  }
+
+  .promoMessage {
+    font-size: 14px;
+    color: #939393;
+    margin-top: 25px;
+    letter-spacing: .32px;
+  }
+
+  .voucherMessage {
+    line-height: 1.62;
+    font-size: 1.62em;
+    max-width: 520px;
+    letter-spacing: -0.25px;
+    word-spacing: -1px;
+    margin: 0 32px;
+    margin-top: 0px;
+    word-break: break-word;
+    overflow: hidden;
+    display: inline-block;
+    width: 90%;
+    font-weight: normal;
+    @media all and (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  .formContainer {
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    letter-spacing: -0.62px;
+    max-width: 573px;
+  }
+
+  @media all and (max-width: $breakpoint-tablet) {
+    .formContainer {
+      padding: 0;
+      max-width: 37.8em;
+    }
+  }
+
+  @media all and (max-width: $breakpoint-mobile) {
+    label {
+      font-size: 14px;
+    }
+
+    .voucherMessage {}
+
+    .formContainer {
+      > div {
+        top: -11.5em
+      }
+    }
+  }
+
+}

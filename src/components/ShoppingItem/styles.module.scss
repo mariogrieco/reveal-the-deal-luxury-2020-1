@@ -1,0 +1,55 @@
+@import "src/themes/_variables.scss";
+
+:local {
+
+	.container {
+		width: 219px;
+		height: 249px;
+		border-radius: 4px;
+		border: 1px solid #E5E8EA;
+		text-align: center;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		padding: 25px;
+		cursor: pointer;
+	}
+
+	.button {
+		width: 112px;
+		height: 32px;
+		display: inline-block;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px;
+		cursor: pointer;
+		font-family: 'Oxygen', sans-serif;
+		font-weight: bold;
+		transition: all .2s linear;
+		background-color: var(--primary-color);
+		color: white;
+
+		&:focus,
+		&:active,
+		&:hover {
+			border-color: var(--primary-color);
+			background-color: transparent;
+			color: var(--primary-color);
+		}
+		&:focus,
+		&:active {
+			margin-bottom: 10px;
+		}
+	}
+
+	.imageContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 95px;
+	}
+}

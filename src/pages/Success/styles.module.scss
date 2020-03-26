@@ -1,0 +1,35 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .container {
+    @media all and (max-width: $breakpoint-main-container) {
+      flex-direction: row;
+      display: flex;
+    }
+
+    @media all and (max-width: $breakpoint-desktop) {
+      width: auto;
+      flex-shrink: 1;
+    }
+
+    @media all and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .congratsContainer {
+    background: #FFFFFF;
+    padding: 40/16+em;
+    text-align: center;
+
+    @media all and (max-width: $breakpoint-main-container) {
+      width: 50%;
+      flex: 0 0 auto;
+      margin-bottom: 0;
+    }
+  }
+}

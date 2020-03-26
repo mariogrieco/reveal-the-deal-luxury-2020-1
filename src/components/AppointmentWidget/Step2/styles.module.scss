@@ -1,0 +1,21 @@
+:local {
+  .container__picker__time {
+    padding: 1em;
+    width: 100%;
+  }
+
+  .container__picker__time__hour {
+    border-radius: 0.25em;
+    cursor: pointer;
+    float: left;
+    padding: .5em;
+    text-align: center;
+    transition: all .25s ease-out;
+    width: 1/3 * 100%;
+
+    &:hover {
+      background: var(--secondaryColor);
+      color: #fff;
+    }
+  }
+}

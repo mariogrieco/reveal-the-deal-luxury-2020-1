@@ -1,0 +1,58 @@
+:local {
+  .container__reply {
+    font-size: 16px;
+    position: relative;
+
+
+    &.senderRep + .senderRep,
+    &.senderUser + .senderUser{
+      margin-top: .5em;
+
+      .container__reply__name {
+        display: none;
+      }
+    }
+  }
+
+  .container__reply__name {
+    color: var(--secondaryColor);
+    font-weight: 600;
+
+    &:after {
+      content: ':';
+    }
+  }
+
+  .container__reply__message {
+    font-size: 0.875em;
+    margin: .5em 0;
+    line-height: 1.5em;
+
+    .senderUser & {
+      margin: .5em 5em .5em 0;
+    }
+  }
+
+  .container__transcript_item {
+    padding: 0 1.5em;
+    transition: all .25s ease-out;
+
+    &:first-child {
+      margin-top: 2em;
+    }
+
+    &:last-child {
+      margin-bottom: 2em;
+    }
+
+    &.is-hidden {
+      opacity: 0;
+      transform: translate(0, 20%);
+      visibility: hidden;
+    }
+  }
+
+  .container__transcript {
+    padding: 0 1.5em 2em;
+  }
+}

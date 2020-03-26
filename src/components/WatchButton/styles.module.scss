@@ -1,0 +1,88 @@
+@import "src/themes/_variables.scss";
+
+:local {
+	.container {
+		background-color: rgba(35, 57, 113, 0.6);
+		width: 100%;
+		max-width: 325px;
+		margin: 0 auto;
+		border-radius: 6em;
+		padding: 5px;
+		cursor: pointer;
+		box-shadow: 1px 1px 12px transparent;
+		transition: all .12s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+		@media all and (max-width: $breakpoint-tablet) {
+			display: none;
+		}
+
+		&:hover {
+			transform: scale(1.025);
+			box-shadow: 0px 1px 8px #ffccff;
+		}
+
+		&:focus,&:active {
+			transform: scale(.99);
+			box-shadow: 0px 0px 4px #ffccff;
+		}
+
+		strong {
+			margin: 0 0 0 .5em;
+			font-size: 1em;
+			font-weight: 600;
+		}
+
+		> span {
+			height: 59px;
+			border-radius: 6em;
+			max-width: 325px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-transform: uppercase;
+		}
+	}
+
+	.containerTablet {
+		display: none;
+
+		&:hover {
+			transform: scale(1.025);
+			box-shadow: 0px 1px 8px #ffccff;
+		}
+
+		&:focus,&:active {
+			transform: scale(.99);
+			box-shadow: 0px 0px 4px #ffccff;
+		}
+
+		@media all and (max-width: $breakpoint-tablet) {
+			display: flex;
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			> span {
+				margin-left: 0;
+				width: 47px;
+				height: 47px;
+			}
+		}
+	}
+
+	.play {
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		background: white;
+		margin-left: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 5px;
+		padding-top: 1px;
+	}
+}

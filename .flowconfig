@@ -1,0 +1,19 @@
+[ignore]
+.*/node_modules/.*
+.*/public/.*
+
+[include]
+./src/
+
+[libs]
+./flow-typed/
+
+[lints]
+
+[options]
+module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/\1'
+module.name_mapper='.*\(.(less|css)\)' -> '{}'
+
+module.file_ext=.less
+
+[strict]

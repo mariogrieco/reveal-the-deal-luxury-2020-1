@@ -1,0 +1,44 @@
+@import "src/themes/__variables.scss";
+
+:local {
+    .container {
+    }
+
+    .info {
+        padding: 0 15px;
+        background-color: #ffffff;
+        padding: 0 15px;
+        text-align: center;
+        padding: 25px 0;
+        margin-bottom: 15px;
+        font-family: Oxygen, sans-serif;
+        h1 {
+            font-size: 1.3em;
+            color: #223970;
+        }
+
+        p {
+            color: #97A4AA;
+        }
+    }
+
+    .itemsArea {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .body {
+        padding: 0 15px;
+        background-color: #f7f7f7;
+        padding: 0 15px;
+        text-align: center;
+        padding: 25px 0;
+        margin-top: 15px;
+        font-family: Oxygen, sans-serif;
+
+        h2 {
+            color: #223970;
+            font-weight: normal;
+        }
+    }
+}

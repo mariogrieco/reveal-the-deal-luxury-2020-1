@@ -1,0 +1,65 @@
+@import "src/themes/__variables.scss";
+
+:local {
+  .thumbnail {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    cursor: pointer;
+
+    &:hover {
+      .playButton {
+        transform: translateY(-50%) scale(1.05);
+      }
+    }
+  }
+
+  .title {
+    color: #FFFFFF;
+    font-size: 25/16+em;
+    line-height: 1.28;
+    text-align: center;
+    position: relative;
+    margin-top: -70/25+em;
+    margin-bottom: 25/25+em;
+  }
+
+  .videoModal {
+    padding-bottom: 9/16 * 100%;
+    position: relative;
+    max-width: 100%;
+    width: 80vw;
+
+    &:before {
+      content: '';
+    }
+
+    iframe {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .playButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+
+    width: 65/16+em;
+
+    transition: all .2s ease-in;
+  }
+}
