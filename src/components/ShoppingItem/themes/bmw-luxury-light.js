@@ -2,6 +2,9 @@
 
 export default function (globalTheme) {
     return {
-        borderColor: globalTheme.colors.primary
+        button: {
+            background: globalTheme.colors.primary
+        },
+        borderColor: '#E5E8EA'
     }
 }

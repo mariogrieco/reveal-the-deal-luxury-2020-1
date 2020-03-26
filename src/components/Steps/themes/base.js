@@ -2,10 +2,10 @@
 
 export default function (globalTheme) {
     return {
-        activeColor: globalTheme.colors.primary,
-        inactiveColor: '#D0D0D0',
-        stepsBarActiveBg: globalTheme.colors.secondary,
-        stepsBarInactiveBg: '#D0D0D0',
+        activeColor: '#878787',
+        inactiveColor: '#1b1b1b',
+        stepsBarActiveBg: '#878787',
+        stepsBarInactiveBg: '#1b1b1b',
         titleColor: globalTheme.colors.primary
     }
 }

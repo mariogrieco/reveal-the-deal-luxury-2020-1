@@ -8,8 +8,8 @@ import supportedThemes from './themes/__supportedThemes.js'
 import styles from './styles.module.scss'
 
 function Sidebar (props) {
-    const { theme, title, backgroundImage } = props
-    const bgImage = backgroundImage || theme.bgImage
+    const { theme, title, backgroundImageName } = props
+    const bgImage = theme[backgroundImageName]
     return (
         <div className={cn(styles.container, props.className)} style={{
             backgroundColor: theme.bgColor,

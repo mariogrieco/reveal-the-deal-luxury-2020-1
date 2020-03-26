@@ -42,11 +42,9 @@
   }
 
   .formContainer {
-    background: #FFFFFF;
     flex-grow: 1;
     max-width: 80%;
     margin: 0 auto;
-
     @media all and (max-width: $breakpoint-mobile) {
       margin: 0 2.5em 1.6em 2.5em;
       width: calc(100% - 80px);

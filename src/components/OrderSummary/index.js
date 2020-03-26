@@ -88,7 +88,7 @@ export const OrderSummaryLayout = withTranslation(transDomain)(withTheme(support
     return (
         <div
             className={cn(styles.container, className)}
-            style={{}}>
+            style={{ backgroundColor: theme.sidebar.backgroundColor }}>
             {heading}
             <div className={cn(styles.body, bodyClassName)}>
                 <Scrollbars

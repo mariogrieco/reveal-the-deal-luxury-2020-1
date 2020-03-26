@@ -2,6 +2,6 @@
 
 export default function (globalTheme) {
     return {
-        eventColor: globalTheme.colors.secondary
+        eventColor: '#2A2A2A'
     }
 }

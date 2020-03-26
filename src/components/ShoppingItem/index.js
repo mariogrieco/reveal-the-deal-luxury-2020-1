@@ -15,7 +15,7 @@ function ShoppingItem (props) {
     return (
         <div
             className={styles.container}
-            style={{ backgroundColor: theme.background }}>
+            style={{ backgroundColor: theme.background, borderColor: theme.borderColor }}>
             <div className={styles.imageContainer}>
                 <img src={image} alt={src} width={width} height={height} />
             </div>
@@ -30,7 +30,7 @@ function ShoppingItem (props) {
                 />
             </Form.Field>
             <span className={styles.button} style={{
-                '--primary-color': theme.borderColor
+                '--primary-color': theme.button.background
             }}>
                   Add To Cart
             </span>

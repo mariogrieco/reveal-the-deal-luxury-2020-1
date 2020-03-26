@@ -13,7 +13,7 @@ const TopBar = ({ t, theme, date }) => {
     const name = state.campaign.contactInfo.name
     return (
         <>
-            <div className={styles.container} style={{ backgroundColor: theme.background }}>
+            <div className={styles.container} style={{ backgroundColor: theme.background, '--color': theme.color }}>
                 {theme.showLogo &&
                     <div className={styles.logo} style={{
                         '--logo-container-size': theme.logoContainerSize,

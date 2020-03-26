@@ -17,8 +17,6 @@ import MessageIncentive from 'components/MessageIncentive'
 
 import styles from './styles.module.scss'
 
-const SIDEBAR_BG = require('./images/bmw-luxury-light.png')
-
 type Props = {
     location: Location
 }
@@ -37,8 +35,8 @@ export default (props: Props) => {
     }
 
     return (
-        <StepsLayout backgroundImage={SIDEBAR_BG} step={3} header={<Header/>} sidebar={
-            <Sidebar className={styles.sidebarContainer} title={<MainLogo />}>
+        <StepsLayout step={3} header={<Header/>} sidebar={
+            <Sidebar backgroundImageName={'bg3'} className={styles.sidebarContainer} title={<MainLogo />}>
                 <MessageIncentive
                     message={`${name}, we are excited to share this unique trade-in opportunity with you.`}
                     />

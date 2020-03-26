@@ -14,6 +14,7 @@ export default function (globalTheme) {
         backgroundColor: '#FFFFFF',
         showWatchButton: false,
         showLogo: true,
-        luxuryBackground: true
+        luxuryBackground: true,
+        eventColor: '#2a2a2a'
     }
 }

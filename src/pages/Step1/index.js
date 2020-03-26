@@ -14,8 +14,6 @@ import MainLogo from 'components/MainLogo'
 import { Store } from 'Store'
 import { updateLead } from 'Actions'
 
-const SIDEBAR_BG = require('./images/bmw-luxury-light.png')
-
 type Props = {
     location: Location
 }
@@ -34,7 +32,7 @@ export default (props: Props) => {
 
     return (
         <StepsLayout step={1} header={<Header/>} sidebar={
-            <Sidebar backgroundImage={SIDEBAR_BG} className={styles.sidebarContainer} title={<MainLogo />}>
+            <Sidebar backgroundImageName={'bg1'} className={styles.sidebarContainer} title={<MainLogo />}>
                 <MessageIncentive
                     message={'We received special approval to run this event this season and look forward to rewarding you for participating! It is a great time for an upgrade right now because many makes and models are in high demand and we are in need of more pre-owned inventory. This offer is a significant opportunity and we would be pleased if you took advantage of it.'}
                 />

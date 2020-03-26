@@ -33,7 +33,7 @@
     justify-content: flex-start;
     align-content: center;
     flex: 1;
-    color: #8b8b8b;
+    color: var(--color);
 
 
     @media all and (max-width: $breakpoint-mobile) {
@@ -72,9 +72,10 @@
 
   .expiryTextRight {
     margin-left: auto;
-    color: #8b8b8b;
+    color: var(--color);
     span {
-      color: #262626;
+      font-weight: bold;
+      // color: #262626;
     }
 
     @media all and (max-width: $breakpoint-mobile) {

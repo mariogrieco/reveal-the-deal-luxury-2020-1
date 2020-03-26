@@ -49,7 +49,7 @@ class Steps extends Component<Props> {
                 {
                     description &&
                         <p className={styles.description} style={{
-                            color: theme.titleColor
+                            color: theme.descriptionColor
                         }}>
                             {description}
                         </p>

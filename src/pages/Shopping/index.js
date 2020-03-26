@@ -20,6 +20,7 @@ import { useMediaQuery } from 'beautiful-react-hooks'
 import { Scrollbars } from 'react-custom-scrollbars'
 import Footer from 'components/Footer'
 import TopBar from 'components/TopBar'
+import ShoppingLayout from 'components/ShoppingLayout'
 
 import { Store } from 'Store'
 
@@ -112,7 +113,7 @@ export default withRouter((props: Props) => {
     const toCheckout = () => props.history.push(`${props.location.pathname.replace('shopping', 'checkout')}${props.location.search}`)
 
     return (
-        <>
+        <ShoppingLayout>
             <TopBar locale={state.locale} date={state.campaign.expiryDate}/>
             <ModalContainer
                 show={false}
@@ -216,6 +217,6 @@ export default withRouter((props: Props) => {
             <div className={styles.footer}>
                 <Footer/>
             </div>
-        </>
+        </ShoppingLayout>
     )
 })

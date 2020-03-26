@@ -13,9 +13,10 @@ import Icon from './Icon'
 
 function OrderSummary (props) {
     const { theme, t, onClick } = props
-    // const { state } = React.useContext(Store)
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{
+            backgroundColor: theme.backgroundColor
+        }}>
             <div className={styles.leftIcon}></div>
             <div className={styles.rightSide}>
                 <span className={styles.price} style={{
@@ -28,8 +29,8 @@ function OrderSummary (props) {
                         <Form.Dropdown
                             placeholder={t('placeholder')}
                             options={[1, 2, 3]}
-                        // optionFormat={'field.currentVehicleCondition.options.%name%'}
-                        // defaultValue={props.values.currentVehicleCondition}
+                            // optionFormat={'field.currentVehicleCondition.options.%name%'}
+                            // defaultValue={props.values.currentVehicleCondition}
                             trans={t}
                             onChange={value => ({})}
                     />

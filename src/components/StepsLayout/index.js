@@ -15,7 +15,7 @@ const StepsLayout = ({
     step
 }) => {
     return (
-        <div className={cn(styles.container, className)}>
+        <div className={cn(styles.container, className)} style={{ backgroundColor: theme.backgroundColor }}>
             <div className={styles.header} style={{ backgroundImage: `url(${theme.stepsBg[step - 1]})` }}></div>
             <div className={styles.children}>{children}</div>
             <div className={styles.sidebar}>{sidebar}</div>

@@ -1,10 +1,6 @@
 @import "src/themes/__variables.scss";
 
 :local {
-	.container {
-		background-color: #FCFCFC;
-	}
-
 	.footer {
 		@media all and (max-width: $breakpoint-tablet + 250px) {
 			margin-bottom: 145px;

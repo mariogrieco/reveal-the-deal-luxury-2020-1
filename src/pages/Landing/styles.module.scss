@@ -22,6 +22,12 @@
 		flex-direction: column;
 		min-width: 50%;
 		max-width: 50%;
+		> div {
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	  }
 
 	  .leftSide {
