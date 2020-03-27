@@ -1,5 +1,14 @@
 @import "src/themes/__variables.scss";
 
 :local {
-
+	.submit {
+		width: 100%;
+		@media all and (max-width: $breakpoint-mobile) {
+			> button {
+				min-width: 100%;
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+	}
 }

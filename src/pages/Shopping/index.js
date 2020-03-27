@@ -10,7 +10,8 @@ import {
     Heading,
     Confirm as Continue,
     OrderSummaryLayout,
-    HeadingMenu
+    HeadingMenu,
+    ConfirmContainer
 } from 'components/OrderSummary'
 import ModalContainer from 'components/ModalContainer'
 import MessageStep from 'components/MessageStep'
@@ -116,7 +117,7 @@ export default withRouter((props: Props) => {
         <ShoppingLayout>
             <TopBar locale={state.locale} date={state.campaign.expiryDate}/>
             <ModalContainer
-                show={false}
+                show={show}
                 onClickOverlay={() => toggleModal(!show)}
             >
                 <div className={styles.messageSlider}>
@@ -192,27 +193,16 @@ export default withRouter((props: Props) => {
                             heading={isTabletOrMobile ? <HeadingMenu onClickClose={toggleRightMenu} /> : <Heading handleConfirm={toCheckout} />}
                             footer={isTabletOrMobile ? null : <Continue text='Confirm Items' onClick={toCheckout} />}
                         >
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
-                            <OrderItem />
+                            {new Array(100).fill(1).map((v, i) => <span><OrderItem />{i}</span>)}
                         </OrderSummaryLayout>
                     </MenuRight>
                 </div>
             </div>
 
-            <div className={styles.continueTablet} >
-                <Continue text='Confirm Items' onClick={toCheckout} />
+            <div className={styles.continueTablet}>
+                <ConfirmContainer>
+                    <Continue noOutline text='Confirm Items' onClick={toCheckout} />
+                </ConfirmContainer>
             </div>
             <div className={styles.footer}>
                 <Footer/>

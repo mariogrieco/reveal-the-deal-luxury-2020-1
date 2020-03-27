@@ -11,8 +11,7 @@ export function MenuBody ({ children, show }) {
             right: 0,
             top: 0,
             bottom: 0,
-            transform: 'translate3d(80%, 0, 0)',
-            boxShadow: '0px 8px 6px 8px rgba(100, 100, 100, 0.25)'
+            transform: 'translate3d(80%, 0, 0)'
 
         },
         enter: {
@@ -21,8 +20,7 @@ export function MenuBody ({ children, show }) {
             right: 0,
             top: 0,
             bottom: 0,
-            transform: 'translate3d(0%, 0, 0)',
-            boxShadow: '0px 8px 6px 8px rgba(100, 100, 100, 0.25)'
+            transform: 'translate3d(0%, 0, 0)'
         },
         leave: {
             position: 'fixed',
@@ -30,8 +28,7 @@ export function MenuBody ({ children, show }) {
             right: 0,
             top: 0,
             bottom: 0,
-            transform: 'translate3d(100%, 0, 0)',
-            boxShadow: '0px 8px 6px 8px rgba(100, 100, 100, 0.25)'
+            transform: 'translate3d(100%, 0, 0)'
         },
         unique: true
     })
@@ -42,7 +39,6 @@ export default function ModalContainer ({ children, show, onClickOverlay, disabl
     if (disabled) {
         return children
     }
-
     return (
         <>
             <ModalOverlay show={show} onClickOverlay={onClickOverlay} />

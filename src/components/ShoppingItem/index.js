@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import withTheme from 'hoc/withTheme'
 import { withTranslation } from 'react-i18next'
-
+import cn from 'classnames'
 import styles from './styles.module.scss'
 import supportedThemes from './themes/__supportedThemes.js'
 import * as Form from 'components/Form'
@@ -25,11 +25,14 @@ function ShoppingItem (props) {
                     options={[120, 250, 300]}
                     // optionFormat={'field.currentVehicleCondition.options.%name%'}
                     // defaultValue={props.values.currentVehicleCondition}
+                    customStyle={theme.dropdown}
                     trans={t}
                     onChange={value => ({})}
                 />
             </Form.Field>
-            <span className={styles.button} style={{
+            <span className={cn(styles.button, {
+                [styles.outline]: theme.outline
+            })} style={{
                 '--primary-color': theme.button.background
             }}>
                   Add To Cart

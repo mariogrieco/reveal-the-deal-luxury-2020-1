@@ -1,6 +1,10 @@
 // @flow
 import * as React from 'react'
 
+import supportedThemes from './themes/__supportedThemes.js'
+
+import withTheme from 'hoc/withTheme'
+
 type Props = {
   onCancel?: (e: SyntheticEvent) => void,
   isLoading?: boolean,
@@ -10,7 +14,7 @@ type Props = {
   size?: string
 };
 
-export default class FormSubmit extends React.Component<Props> {
+class FormSubmit extends React.Component<Props> {
   static defaultProps = {
       isLoading: false,
       color: 'primary',
@@ -20,14 +24,16 @@ export default class FormSubmit extends React.Component<Props> {
   };
 
   render () {
+      const style = this.theme.button
       return (
           <>
-              <button disabled={this.props.isLoading} color='primary' size='medium'>
+              <button style={style} disabled={this.props.isLoading} color='primary' size='medium'>
                   {this.props.label}
               </button>
 
               {this.props.onCancel && (
                   <button
+                      style={style}
                       disabled={this.props.isLoading}
                       link
                       color='danger'
@@ -41,3 +47,5 @@ export default class FormSubmit extends React.Component<Props> {
       )
   }
 }
+
+export default withTheme(supportedThemes)(FormSubmit)

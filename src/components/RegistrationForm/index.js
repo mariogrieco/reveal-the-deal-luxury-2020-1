@@ -64,7 +64,7 @@ function RegistrationForm (props: Props) {
                 className={cn(styles.submit, { [styles.isLoading]: isLoading })}
                 disabled={isLoading}
             >
-                <span>{t('login')}</span>
+                <span style={{ color: isLoading ? 'transparent' : null }}>{t('login')}</span>
             </button>
         </div>
         {

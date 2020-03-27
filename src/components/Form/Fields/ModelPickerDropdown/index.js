@@ -2,7 +2,9 @@
 import React, { Component } from 'react'
 import Select, { components } from 'react-select'
 
-import styles from './Dropdown.module.scss'
+import styles from '../Dropdown/Dropdown.module.scss'
+import withTheme from 'hoc/withTheme'
+import supportedThemes from './themes/__supportedThemes.js'
 
 const CLASS_NAME_PREFIX = 'sh-select'
 
@@ -17,7 +19,7 @@ type Props = {
     trans?: string => string,
 };
 
-export default class ModelPickerDropdown extends Component<Props> {
+class ModelPickerDropdown extends Component<Props> {
     static defaultProps = {
         required: true,
         disabled: false,
@@ -57,7 +59,7 @@ export default class ModelPickerDropdown extends Component<Props> {
         ]
 
         return (
-            <div className={styles.dropdown}>
+            <div className={styles.dropdown} style={this.props.theme}>
                 <Select
                     {...valueProp}
                     components={{ DropdownIndicator, Option: OptionWithVoucherValue }}
@@ -126,3 +128,5 @@ const ArrowDown = ({ width, height, color }) => (
         </g>
     </svg>
 )
+
+export default withTheme(supportedThemes)(ModelPickerDropdown)

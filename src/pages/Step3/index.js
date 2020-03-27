@@ -8,7 +8,6 @@ import { updateLead } from 'Actions'
 import Header from 'components/Header'
 import VoucherValue from 'components/VoucherValue'
 import CashbackAndRates from 'components/CashbackAndRates'
-import BrandsFooter from 'components/BrandsFooter'
 import Sidebar from 'components/Sidebar'
 import LeadGenForm from 'components/LeadGenForm/Step3'
 import StepsLayout from 'components/StepsLayout'
@@ -64,10 +63,6 @@ export default (props: Props) => {
                         }}
                         initialValues={state.lead && state.lead.fields ? state.lead.fields : {}}
                     />
-
-                    <div className={styles.brandsContainer}>
-                        <BrandsFooter />
-                    </div>
                 </div>
             </div>
         </StepsLayout>

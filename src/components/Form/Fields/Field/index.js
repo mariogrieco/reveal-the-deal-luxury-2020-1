@@ -2,14 +2,17 @@
 import React from 'react'
 import cn from 'classnames'
 import MaskedInput from 'react-text-mask'
-import percentageMask from '../Helpers/InputMask/percentageMask'
-import phoneMask from '../Helpers/InputMask/phoneMask'
-import makeCurrencyMask from '../Helpers/InputMask/currencyMask'
+import percentageMask from '../../Helpers/InputMask/percentageMask'
+import phoneMask from '../../Helpers/InputMask/phoneMask'
+import makeCurrencyMask from '../../Helpers/InputMask/currencyMask'
 
-import { makeId } from '../Helpers'
-import Label from '../Label'
+import { makeId } from '../../Helpers'
+import Label from '../../Label'
+import withTheme from 'hoc/withTheme'
 
 import { ParseNumber } from 'i18n/NumberFormatter'
+
+import supportedThemes from './themes/__supportedThemes.js'
 
 import styles from './Field.module.scss'
 
@@ -32,7 +35,7 @@ type Props = {
     currency?: string,
 };
 
-export default function Field (props: Props) {
+function Field (props: Props) {
     const [ isFocused, setIsFocused ] = React.useState(false)
     const id = React.useMemo(() => makeId('form-field'), [])
 
@@ -76,7 +79,8 @@ export default function Field (props: Props) {
         disabled: props.disabled,
         onChange: handleChange,
         placeholder: props.placeholder,
-        ...attr
+        ...attr,
+        style: props.theme.input
     }
 
     if (props.name) {
@@ -141,7 +145,7 @@ export default function Field (props: Props) {
     }
 
     return (
-        <div className={wrapperClasses}>
+        <div className={wrapperClasses} style={{ ...props.theme.wrapper }}>
             {props.label && !props.asPlaceHolder ? (
                 <Label for={id}>{props.label}</Label>
             ) : null}
@@ -155,3 +159,5 @@ Field.defaultProps = {
     required: true,
     noBorder: false
 }
+
+export default withTheme(supportedThemes)(Field)

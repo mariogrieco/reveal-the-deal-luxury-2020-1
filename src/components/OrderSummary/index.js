@@ -26,7 +26,9 @@ export const HeadingMenu = withTranslation(transDomain)(withTheme(supportedTheme
         <div className={cn(styles.headingMenu, className)}>
             <CloseIcon onClick={onClickClose} />
             <h3 style={{ color: theme.color }}>Your Cart</h3>
-            <div className={styles.textAreaMenu}>
+            <div className={styles.textAreaMenu} style={{
+                color: theme.color
+            }}>
                 <strong>$875</strong>  <span>Remaining</span>
             </div>
         </div>
@@ -67,10 +69,20 @@ export const Heading = withTranslation(transDomain)(withTheme(supportedThemes)((
     )
 }))
 
-export const Confirm = withTranslation(transDomain)(withTheme(supportedThemes)(({ text, theme, t, className, onClick }) => {
+export const Confirm = withTranslation(transDomain)(withTheme(supportedThemes)(({ noOutline, text, theme, t, className, onClick }) => {
     return (
-        <div className={cn(styles.confirm, className)} onClick={onClick} style={{ backgroundColor: theme.color }}>
+        <div className={cn(styles.confirm, className, {
+            [styles.outline]: theme.outlineBtn && !noOutline
+        })} onClick={onClick} style={{ '--button-color': theme.buttonColor }}>
             {text}
+        </div>
+    )
+}))
+
+export const ConfirmContainer = withTranslation(transDomain)(withTheme(supportedThemes)(({ text, theme, t, className, children }) => {
+    return (
+        <div className={cn(styles.ConfirmContainer, className)} style={{ backgroundColor: theme.colors.primary }}>
+            {children}
         </div>
     )
 }))
@@ -90,15 +102,14 @@ export const OrderSummaryLayout = withTranslation(transDomain)(withTheme(support
             className={cn(styles.container, className)}
             style={{ backgroundColor: theme.sidebar.backgroundColor }}>
             {heading}
-            <div className={cn(styles.body, bodyClassName)}>
+            <div className={cn(styles.orderSummaryLayout, bodyClassName)}>
                 <Scrollbars
                     autoHide
                     autoHideTimeout={1000}
                     autoHideDuration={200}
                     autoHeight
-                    autoHeightMax={'100vh'}
                     thumbMinSize={30}>
-                    {children}
+                    <span className={styles.orderSummaryLayoutBody}>{children}</span>
                 </Scrollbars>
             </div>
             <div className={cn(styles.footer, footerClassName)}>

@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom'
 import MessageIncentive from 'components/MessageIncentive'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
-import BrandsFooter from 'components/BrandsFooter'
 import StepsLayout from 'components/StepsLayout'
 import LeadGenForm from 'components/LeadGenForm/Step1/Step1'
 import styles from './styles.module.scss'
@@ -58,10 +57,6 @@ export default (props: Props) => {
                         }}
                         initialValues={state.lead && state.lead.fields ? state.lead.fields : {}}
                     />
-
-                    <div className={styles.brandsContainer}>
-                        <BrandsFooter />
-                    </div>
                 </div>
             </div>
         </StepsLayout>

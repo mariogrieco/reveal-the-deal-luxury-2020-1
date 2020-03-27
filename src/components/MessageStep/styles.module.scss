@@ -1,16 +1,41 @@
+@import "src/themes/__variables.scss";
+
 :local {
 	.container {
 		padding: 60px 75px;
 		margin: 0 auto;
 		text-align: center;
+		@media all and (max-width: $breakpoint-mobile) {
+			padding: 45px 15px;
+			@media (orientation: landscape) {
+				padding: 25px 15px;
+			}
+		}
 	}
 
 	.title {
 		font-size: 1.3em;
 		margin-bottom: 50px;
+
+		@media all and (max-width: $breakpoint-mobile) {
+			font-size: 1.1em;
+			line-height: 1.3;
+			margin-bottom: 35px;
+			@media (orientation: landscape) {
+				margin-bottom: 15px;
+			}
+		}
 	}
 
 	.message {
 		color: #97A4AA;
+
+		@media all and (max-width: $breakpoint-mobile) {
+			font-size: 0.9em;
+			margin-bottom: 1em;
+			@media (orientation: landscape) {
+				margin-bottom: 15px;
+			}
+		}
 	}
 }

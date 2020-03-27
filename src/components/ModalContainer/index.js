@@ -1,52 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import supportedThemes from './themes/__supportedThemes'
 
-import { useTransition, animated, config } from 'react-spring'
+import withTheme from 'hoc/withTheme'
+
+import { useTransition, animated } from 'react-spring'
 
 import styles from './styles.module.scss'
 
-export function ModalBody ({ children, show }) {
-    const transitions = useTransition(show, null, {
-        from: {
-            left: '50%',
-            top: '0%',
-            transform: 'translate(-0%, -50%)'
-        },
-        enter: {
-            left: '50%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)'
-        },
-        leave: {
-            left: '150%',
-            top: '50%',
-            transform: 'translate(-50%, 50%)'
-        },
-        config: config.stiff,
-        unique: true,
-        trail: 0
-    })
+export const ModalBody = withTheme(supportedThemes)(function ({ children, show, theme }) {
+    const transitions = useTransition(show, null, theme.modalBody)
     return transitions.map(({ item, key, props }) => item && <animated.div key={key} style={props} className={styles.modalBody}>{children}</animated.div>)
-}
+})
 
-export const ModalOverlay = ({ onClickOverlay, show }) => {
-    const transitions = useTransition(show, null, {
-        from: { opacity: 0.25, backgroundColor: 'rgba(29, 29, 29, 0.15)' },
-        enter: { opacity: 1, backgroundColor: 'rgba(29, 29, 29, 0.4)' },
-        leave: { opacity: 0.5, backgroundColor: 'rgba(29, 29, 29, 0.4)' },
-        unique: true,
-        trail: 500
-    })
+export const ModalOverlay = withTheme(supportedThemes)(({ onClickOverlay, show, theme }) => {
+    const transitions = useTransition(show, null, theme.modalOverlay)
     return transitions.map(({ item, key, props }) => item && <animated.div key={key} style={props} onClick={onClickOverlay} className={styles.modalOverlay} />)
-}
+})
 
 export default function ModalContainer ({ children, show, onClickOverlay }) {
     React.useEffect(() => {
+
         if (show) {
             window.document.body.style.overflow = 'hidden'
         } else {
             window.document.body.style.overflow = null
         }
+
+        return () => {
+            window.document.body.style.overflow = null
+        }
+
     }, [show])
     return ReactDOM.createPortal(
         <>

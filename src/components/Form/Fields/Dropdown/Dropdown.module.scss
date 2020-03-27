@@ -10,7 +10,7 @@
 :global {
   .sh-select__container {
     .sh-select__control {
-      background: #F7F8F8;
+      background: var(--background-color);
       font-size: 1em;
       border-width: 1px;
       border-color: transparent;
@@ -32,14 +32,12 @@
         border-bottom-right-radius: 0;
       }
 
-      &--is-focused,
-      &--menu-is-open {
         .sh-select__dropdown-indicator {
           polygon {
             stroke: #000; // IE11 fallback
             stroke: var(--color-selected);
+            fill: var(--color-selected);
           }
-        }
       }
     }
 
@@ -53,7 +51,7 @@
 
     .sh-select__placeholder,
     .sh-select__single-value {
-      color: #9DA9AF;
+      color: var(--text-color);
       margin-left: 0;
       margin-right: 0;
       overflow: visible;
@@ -62,7 +60,7 @@
     .sh-select__menu {
       width: calc(100% + 2px);
       box-shadow: none;
-      background-color: #F9F9F9;
+      background-color: var(--background-color);
       border: 1px solid #000; // IE11 fallback
       border: 1px solid var(--color-selected);
       border-top: 0;
@@ -74,7 +72,7 @@
     }
 
     .sh-select__menu-list {
-      border-top: 1px solid #D8D8D8;
+      border-top: 1px solid var(--color-selected);
       padding-top: 10/16+em;
       margin: 0 15/16+em;
     }
@@ -87,11 +85,11 @@
         right: 1em;
         top: 50%;
         transform: translateY(-50%);
-        border: 1px solid #999;
+        border: 1px solid var(--color-selected);
         border-radius: 4px;
         font-size: 12/16+em;
         padding: 4px 8px;
-        color: #999;
+        color: var(--color-selected);
       }
     }
 

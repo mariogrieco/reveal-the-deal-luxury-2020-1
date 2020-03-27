@@ -5,7 +5,8 @@
 		display: grid;
 		grid-template-columns: calc(100% - 500px) minmax(500px, 35%);
 		grid-template-rows: 215px minmax(215px, 100%);
-		overflow: hidden;
+		position: relative;
+		z-index: 35;
 		@media all and (max-width: $breakpoint-tablet) {
 			grid-template-rows: 250px minmax(250px, 100%);
 			grid-template-columns: 60% 40%;
@@ -57,9 +58,7 @@
 			background-size: 100%;
 			background-position: center;
 			background-position-y: 100%;
-			@media all and (max-width: $breakpoint-mobile) {
-				min-height: 1024px;
-			}
+			min-height: 935px;
 		}
 	}
 
@@ -71,6 +70,10 @@
 
 		.header {
 			width: 100%;
+			max-width: 95%;
+			margin: 0 auto;
+			padding: 0 30px;
+			background-size: 150%;
 		}
 
 		.children {

@@ -16,6 +16,15 @@
 		}
 	}
 
+	.orderSummaryLayout {
+		min-height: 100vh;
+	}
+
+	.orderSummaryLayoutBody {
+		padding: 2em 0;
+		height: 100%;
+	}
+
 	.confirmBtn {
 		display: none;
 		position: absolute;
@@ -58,14 +67,36 @@
 	.confirm {
 		height: 50px;
 		border-radius: 8px;
-		background-color: #233971;
-		color: #FFFFFF;
 		line-height: 50px;
 		text-align: center;
 		font-family: 'Oxygen', sans-serif;
 		font-weight: 600;
 		display: block;
+		border: 1px solid var(--button-color);
+		background-color: var(--button-color);
+		color: #FFFFFF;
 		cursor: pointer;
+		transition: all .2s linear;
+
+		&.outline {
+			background-color: transparent;
+			border-color: var(--button-color);
+			color: var(--button-color);
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: transparent;
+			border-color: var(--button-color);
+			color: var(--button-color);
+
+			&.outline {
+				border: 1px solid var(--button-color);
+				background-color: var(--button-color);
+				color: #FFFFFF;
+			}
+		}
 	}
 
 	.bubble {

@@ -16,13 +16,6 @@
     }
   }
 
-  .brandsContainer {
-    display: none;
-    @media all and (max-width: $breakpoint-mobile) {
-      display: block;
-    }
-  }
-
   .steps {
     width: auto !important;
     margin: 0 40/16+em 50/16+em;
@@ -33,11 +26,8 @@
     flex-grow: 1;
     flex-shrink: 0;
     padding: 0 40/16+em;
-
-
-    @media all and (max-width: $breakpoint-mobile) {
-      overflow: hidden;
-      display: none;
+    @media all and (max-width: $breakpoint-tablet) {
+      padding: 0 15px;
     }
   }
 
@@ -59,7 +49,6 @@
   .videoThumbnail {
     margin: 0 -40/16+em;
     height: 316px;
-
     @media all and (max-width: $breakpoint-mobile) {
       overflow: hidden;
     }

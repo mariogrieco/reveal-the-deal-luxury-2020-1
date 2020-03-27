@@ -72,21 +72,6 @@ function Step3 (props: Props) {
 
             <h3>{t('newVehicle.heading')}</h3>
 
-            {makes.length > 1
-                ? <Form.Row>
-                    <Form.Field>
-                        <Form.Dropdown
-                            // error={props.errors.newVehicleMake || null}
-                            placeholder={t('field.newVehicleMake.placeholder')}
-                            options={makes}
-                            onChange={value => props.handleFieldChange('newVehicleMake', value)}
-                            defaultValue={props.values.newVehicleMake}
-                        />
-                    </Form.Field>
-                </Form.Row>
-                : null
-            }
-
             <Form.Row>
                 <Form.Field
                     label={t('field.newVehicleModel.label')}
@@ -110,10 +95,7 @@ function Step3 (props: Props) {
                                 <Form.RowColumn className={styles.rowWrapper} size={0.3} padding={'1em 0.5em 0.1em 0.5em'}>
                                     <Button
                                         onClick={() => handleBtnOnclick(choise)}
-                                        style={(props.values.hotButtons || []).indexOf(choise) !== -1 ? theme.button : {
-                                            border: `1px solid ${theme.button.background}`,
-                                            color: theme.button.background
-                                        }}>
+                                        customStyle={(props.values.hotButtons || []).indexOf(choise) !== -1 ? theme.selectedButton : theme.button}>
                                         {t(`field.hotButtons.choice.${choise}`)}
                                     </Button>
                                 </Form.RowColumn>
@@ -154,11 +136,13 @@ function Step3 (props: Props) {
             </Form.Row>
 
             <Form.Row>
-                <Form.Submit
-                    isLoading={props.isLoading}
-                    label={t('submit.label')}
-                    style={{ background: theme.background, color: theme.color, marginTop: '1.62em' }}
+                <span className={styles.submit}>
+                    <Form.Submit
+                        isLoading={props.isLoading}
+                        label={t('submit.label')}
+                        style={{ background: theme.background, color: theme.color, marginTop: '1.62em' }}
                 />
+                </span>
             </Form.Row>
         </>
     )

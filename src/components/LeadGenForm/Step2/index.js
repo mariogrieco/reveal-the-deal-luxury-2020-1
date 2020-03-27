@@ -136,10 +136,7 @@ function Step2 (props: Props) {
                                 <Form.RowColumn className={styles.rowWrapper}>
                                     <Button
                                         onClick={() => props.handleFieldChange('currentVehicleFinanceMethod', props.values.currentVehicleFinanceMethod === choise ? null : choise)}
-                                        style={props.values.currentVehicleFinanceMethod === choise ? theme.button : {
-                                            border: `1px solid ${theme.button.background}`,
-                                            color: theme.button.background
-                                        }}>
+                                        customStyle={props.values.currentVehicleFinanceMethod === choise ? theme.selectedButton : theme.button}>
                                         {choise.toUpperCase()}
                                     </Button>
                                 </Form.RowColumn>
@@ -215,11 +212,13 @@ function Step2 (props: Props) {
                 </Form.RowColumns>
             </Form.Panel>
             <Form.Row>
-                <Form.Submit
-                    isLoading={props.isLoading}
-                    label={t('label.continueToStep3')}
-                    style={{ background: theme.background, color: theme.color, marginTop: '1.62em' }}
+                <span className={styles.submit}>
+                    <Form.Submit
+                        isLoading={props.isLoading}
+                        label={t('label.continueToStep3')}
+                        style={{ background: theme.background, color: theme.color, marginTop: '1.62em' }}
                 />
+                </span>
             </Form.Row>
         </>
     )

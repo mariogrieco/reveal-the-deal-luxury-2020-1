@@ -9,6 +9,8 @@ import * as Form from 'components/Form'
 import withForm, { WithFormProps } from 'components/Form/Helpers/FormHOC'
 import Steps from 'components/Steps'
 
+import styles from './styles.module.scss'
+
 import supportedThemes from './themes/__supportedThemes'
 
 type Props = WithFormProps | {
@@ -97,11 +99,13 @@ function Step1 (props: Props) {
             </Form.Row>
 
             <Form.Row>
-                <Form.Submit
-                    isLoading={props.isLoading}
-                    label={t('label.continueToStep2')}
-                    style={theme.submit}
+                <span className={styles.submit}>
+                    <Form.Submit
+                        isLoading={props.isLoading}
+                        label={t('label.continueToStep2')}
+                        style={theme.submit}
                 />
+                </span>
             </Form.Row>
         </>
     )

@@ -13,9 +13,13 @@ import Icon from './Icon'
 
 function OrderSummary (props) {
     const { theme, t, onClick } = props
+
+    console.log('theme:', theme)
+
     return (
         <div className={styles.container} style={{
-            backgroundColor: theme.backgroundColor
+            backgroundColor: theme.backgroundColor,
+            '--line-color': theme.lineColor
         }}>
             <div className={styles.leftIcon}></div>
             <div className={styles.rightSide}>
@@ -32,6 +36,7 @@ function OrderSummary (props) {
                             // optionFormat={'field.currentVehicleCondition.options.%name%'}
                             // defaultValue={props.values.currentVehicleCondition}
                             trans={t}
+                            customStyle={theme.dropdown}
                             onChange={value => ({})}
                     />
                     </Form.Field>

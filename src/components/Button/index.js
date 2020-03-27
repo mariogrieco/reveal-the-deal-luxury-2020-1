@@ -71,6 +71,12 @@ function buildButtonClasses (props: Props): Object {
 class Button extends React.Component<LinkProps | ButtonProps> {
     render () {
         const props = this.props
+        const baseTheme = props.customStyle || props.theme.button
+
+        if (props.loading) {
+            baseTheme.color = 'transparent'
+        }
+
         const loader = { '--color-loader': `url(${props.theme.loader})` }
 
         let content = props.children
@@ -98,8 +104,8 @@ class Button extends React.Component<LinkProps | ButtonProps> {
         }
 
         return props.href
-            ? <a href={props.href} style={{ ...props.style, ...loader }} className={cn(classes)}>{content}</a>
-            : <button style={{ ...props.style, ...loader }} type={props.isSubmit ? 'submit' : 'button'} disabled={props.disabled} onClick={props.onClick} className={cn(classes)}>{content}</button>
+            ? <a href={props.href} style={{ ...props.style, ...loader, ...baseTheme }} className={cn(classes)}>{content}</a>
+            : <button style={{ ...props.style, ...loader, ...baseTheme }} type={props.isSubmit ? 'submit' : 'button'} disabled={props.disabled} onClick={props.onClick} className={cn(classes)}>{content}</button>
     }
 }
 
@@ -120,10 +126,11 @@ Button.defaultProps = {
 
 export default withTheme(supportedThemes)(Button)
 
-export const ButtonGroup = ({ children, className }: { children: React.Node, className: String}) => (
-    <div className={`sh-button-group ${className}`}>{children}</div>
+export const ButtonGroup = ({ children, className, style }: { children: React.Node, className: String, style: Object}) => (
+    <div className={`sh-button-group ${className}`} style={style}>{children}</div>
 )
 
 ButtonGroup.defaultProps = {
     className: '',
+    style: {}
 }

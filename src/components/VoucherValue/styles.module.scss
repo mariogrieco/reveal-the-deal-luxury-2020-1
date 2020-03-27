@@ -4,14 +4,14 @@
     .container {
         height: 146px;
         border-radius: 4px;
-        margin: 10/16+em 15px;
+        margin: 10/16+em 30px;
         padding: 20/16+em;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid #E5E8EA;
+        border-bottom: 1px solid #585858;
 
         @media all and (max-width: $breakpoint-main-container) {
             height: auto;

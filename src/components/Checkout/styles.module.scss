@@ -1,0 +1,45 @@
+@import "src/themes/__variables.scss";
+
+:local {
+    .container {
+		border-bottom: 2px solid rgba(4,4,9,.95);
+    }
+
+    .mainLogo {
+		padding: 40px 30px 0 30px;
+		background-color: var(--background-color);
+    }
+
+    .info {
+        padding: 25px 30px;
+        background-color: var(--background-color);
+        text-align: center;
+		font-family: Oxygen, sans-serif;
+
+        h1 {
+            font-size: 1.3em;
+            color: var(--title-color);
+        }
+
+        p {
+            color: #97A4AA;
+        }
+    }
+
+    .itemsArea {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .body {
+        background-color: var(--body-background-color);
+        text-align: center;
+        padding: 10px 30px 30px 30px;
+		font-family: Oxygen, sans-serif;
+        h2 {
+            color: var(--title-color);
+			font-weight: normal;
+			margin: 1.6em 0 1.6em 0;
+        }
+    }
+}

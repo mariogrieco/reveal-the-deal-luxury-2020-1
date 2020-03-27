@@ -1,6 +1,9 @@
 // @flow
 import React, { Component } from 'react'
 import Select, { components } from 'react-select'
+import withTheme from 'hoc/withTheme'
+
+import supportedThemes from './themes/__supportedThemes.js'
 
 import styles from './Dropdown.module.scss'
 
@@ -16,7 +19,7 @@ type Props = {
     optionFormat?: string
 };
 
-export default class Dropdown extends Component<Props> {
+class Dropdown extends Component<Props> {
     static defaultProps = {
         required: true,
         disabled: false,
@@ -82,7 +85,7 @@ export default class Dropdown extends Component<Props> {
         ]
 
         return (
-            <div className={styles.dropdown}>
+            <div className={styles.dropdown} style={this.props.customStyle || this.props.theme}>
                 <Select
                     {...valueProp}
                     components={{ DropdownIndicator }}
@@ -122,6 +125,8 @@ export default class Dropdown extends Component<Props> {
         )
     }
 }
+
+export default withTheme(supportedThemes)(Dropdown)
 
 const DropdownIndicator = (props) => {
     return (

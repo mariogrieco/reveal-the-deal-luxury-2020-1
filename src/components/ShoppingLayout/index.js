@@ -5,11 +5,11 @@ import withTheme from 'hoc/withTheme'
 
 import supportedThemes from './themes/__supportedThemes.js'
 
-// import styles from './styles.module.scss'
+import styles from './styles.module.scss'
 
 function ShoppingLayout ({ theme, children }) {
     return (
-        <div style={{ backgroundColor: theme.background }}>
+        <div style={{ backgroundColor: theme.background }} className={styles.container}>
             {children}
         </div>
     )
